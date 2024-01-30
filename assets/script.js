@@ -20,4 +20,11 @@ const slides = [
 
 const arrowright = document.querySelector('.arrow_right');
 const arrowleft = document.querySelector('.arrow_left');
+const dotscontainer = document.querySelector('.dots');
 
+slides.map((image) => {
+	const dot = document.createElement('div');
+	dot.classList = 'dot';
+	dotscontainer.appendChild(dot)
+
+})
