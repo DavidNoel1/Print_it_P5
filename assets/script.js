@@ -21,17 +21,16 @@ let index = 0;
 const arrowRight = document.querySelector('.arrow_right');
 const arrowLeft = document.querySelector('.arrow_left');
 const dotsContainer = document.querySelector('.dots');
-const slideFirst = slides.length - 1;
-const slideLast = slides.length - 1;
+const slide = slides.length - 1;
 const imageSliding = document.querySelector(".banner-img");
-const tagLine = document.querySelector(".banner p");
+const tagLine = document.querySelector("#banner p");
 const baseUrl = "./assets/images/slideshow/";
 let allDots;
 
 function main() {
     initDots();
     slidePrevious();
-    slideProchaine();
+    slideNext();
 }
 
 main();
@@ -50,7 +49,7 @@ function slidePrevious() {
     arrowLeft.addEventListener("click", () => {
         allDots[index].classList.remove("dot_selected");
         if (index === 0) {
-            index = slideLast;
+            index = slide;
         } else {
             index--;
         }
@@ -58,10 +57,10 @@ function slidePrevious() {
     });
 }
 
-function slideProchaine() {
+function slideNext() {
     arrowRight.addEventListener("click", () => {
         allDots[index].classList.remove("dot_selected");
-        if (index === slideLast) {
+        if (index === slide) {
             index = 0;
         } else {
             index++;
